@@ -1,34 +1,33 @@
 <?php
 class conectar{
-    //definindo constantes de conexão.
     private string $host;
     private string $banco;
     private string $user;
     private string $senha;
 
-    private PDO $pdo; // conexao
+    protected PDO $pdo;
 
     public function __construct()
     {
         $this->host = 'localhost';
-        $this->banco = 'php-tarefas';
+        $this->banco = 'phptarefas';
         $this->user = 'root';
-        $this->senha =  '';
+        $this->senha = '';
 
+        $this->conectar();
     }
+
     private function conectar()
     {
-            try{
-            $str = sprintf('mysql:host=%s;bdname=%s', $this->host,  $this->banco);  // utilizando uma forma mais limpa para subistituir os valores, economizando procesamento ao formar uma string com os parametros corretos.
-
-            $this->pdo = new PDO($str , $this->user, $this->senha); //aqui passamos os parametros de senha e user para a conexao pdo
-
+        try {
+            $str = sprintf('mysql:host=%s;dbname=%s', $this->host, $this->banco);
+            $this->pdo = new PDO($str, $this->user, $this->senha);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
-            }catch(PDOException $ex){
-
-                print_r($ex->getMessage());
-
-            }
+        } catch (PDOException $ex) {
+            echo "Erro na conexão: " . $ex->getMessage();
+        }
     }
 }
-?> 
+
+// new conectar(); 
+?>
