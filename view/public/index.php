@@ -6,7 +6,7 @@
       <title>Cadastrar</title>
   </head>
 <body>
-    <form  method="POST" action="../controller/loginController.php">
+    <form method="POST" action="../../controller/cadastroController.php">
       <fieldset>Realize o seu cadastro!</fieldset>
       <table>
          <tr>
@@ -18,9 +18,7 @@
          <tr>
             <td><input type="password"  placeholder="Senha" name="Senha"></td>
          </tr>
-         <tr>
-            <td><a href="">Esqueceu sua senha?</a></td>
-        </tr>
+     
          <tr>
             <td><input type="submit" name="submit" value="Cadastrar"></td>
          </tr>
