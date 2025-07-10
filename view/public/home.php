@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="../CSS/home.css">
     <title>Sidebar</title>
 </head>
 <body>
     <nav id="sidebar">
         <div id="sidebar_content">
             <div id="user">
-                <img src="src/images/avatar.jpg" id="user_avatar" alt="Avatar">
+                <img src="../imagens/avatar.jpg" id="user_avatar" alt="Avatar">
     
                 <p id="user_infos">
                     <span class="item-description">
@@ -26,16 +26,16 @@
             <ul id="side_items">
                 <li class="side-item active">
                     <a href="#">
-                        <i class="fa-solid fa-chart-line"></i>
+                           <i class="fa-solid fa-clipboard"></i>
                         <span class="item-description">
-                            Dashboard
+                            Tarefas
                         </span>
                     </a>
                 </li>
     
                 <li class="side-item">
                     <a href="#">
-                        <i class="fa-solid fa-user"></i>
+                     <i class="fa-solid fa-check"></i>
                         <span class="item-description">
                             Usuários
                         </span>
@@ -44,27 +44,27 @@
     
                 <li class="side-item">
                     <a href="#">
-                        <i class="fa-solid fa-bell"></i>
+                         <i class="fa-solid fa-trash-can"></i>
                         <span class="item-description">
-                            Notificações
+                            Lixeira
                         </span>
                     </a>
                 </li>
     
                 <li class="side-item">
                     <a href="#">
-                        <i class="fa-solid fa-box"></i>
+                        <i class="fa-solid fa-plus"></i>
                         <span class="item-description">
-                            Produtos
+                            Adicionar
                         </span>
                     </a>
                 </li>
     
                 <li class="side-item">
                     <a href="#">
-                        <i class="fa-solid fa-image"></i>
+                           <i class="fa-solid fa-user"></i>
                         <span class="item-description">
-                            Imagens
+                            Usuário
                         </span>
                     </a>
                 </li>
@@ -80,7 +80,7 @@
             </ul>
     
             <button id="open_btn">
-                <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
+                <i class="fa-solid fa-chevron-right" id="open_btn_icon"></i>
             </button>
         </div>
 
@@ -95,8 +95,8 @@
     </nav>
 
     <main>
-        <h1>Título</h1>
+        <h1>Aqui vai ficar o conteudo da minha pagina.</h1>
     </main>
-    <script src="src/javascript/script.js"></script>
+   <script src="../javascript/home.js"></script>
 </body>
 </html>

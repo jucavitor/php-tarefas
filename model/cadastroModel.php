@@ -19,7 +19,7 @@ class verifica_login extends conectar
         if($stmt->rowCount() > 0)
         {
           print "Seu login já existe no nosso banco de dados";
-          header("Location:login.php");
+          header("Location:../view/public/login.php");
         }
         else
         {   
