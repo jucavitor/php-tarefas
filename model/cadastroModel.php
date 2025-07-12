@@ -6,7 +6,6 @@ class verifica_login extends conectar
 
     public function validacao($email, $senha,$nome)
     {
-   
        try
        {
         $query = "SELECT * FROM usuarios WHERE email = :email AND senha = :senha";
@@ -18,8 +17,9 @@ class verifica_login extends conectar
 
         if($stmt->rowCount() > 0)
         {
-          print "Seu login já existe no nosso banco de dados";
-          header("Location:../view/public/login.php");
+         header('refresh:3;url=../view/public/login.php');
+         print"Seu login já existe no nosso banco de dados!";
+         exit;
         }
         else
         {   
@@ -44,9 +44,12 @@ class verifica_login extends conectar
             $cadastro = $stmt->execute();
 
             if($cadastro){
+               header('refresh:3;url=../view/public/login.php');
                print"Usuario cadastrado com sucesso!";
+               exit;
             }
             else{
+               header('refresh:3;url=../view/public/index.php');
                print"Erro ao cadastrar o seu usuario";
             }
          } 

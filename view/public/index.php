@@ -4,8 +4,20 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Cadastrar</title>
+      <link rel="stylesheet" href="../CSS/index.css">
   </head>
 <body>
+
+  <div class="navbar">
+    <h1>Meu Sistema</h1>
+    <div class="nav-links">
+      <a href="#">Início</a>
+      <a href="#">Sobre</a>
+      <a href="#">Contato</a>
+    </div>
+  </div>
+  <br><br>
+
     <form method="POST" action="../../controller/cadastroController.php">
       <fieldset>Realize o seu cadastro!</fieldset>
       <table>

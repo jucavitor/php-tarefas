@@ -13,7 +13,7 @@ if (isset($_POST['Email']) && isset($_POST['Senha'])) {
     if ($status == "Logado")
      {
        header("refresh:3;url=../view/public/home.php");
-       echo "Redirecinando para o Login!";
+       echo "Redirecinando para a home!";
        exit;  
      } 
 
@@ -26,6 +26,8 @@ if (isset($_POST['Email']) && isset($_POST['Senha'])) {
 }
     else 
     {
+        header("refresh:3;url=../view/public/login.php");
         echo "Preencha todos os campos.";
+        exit;
     }
 ?>
