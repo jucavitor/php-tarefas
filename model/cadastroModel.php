@@ -17,17 +17,14 @@ class verifica_login extends conectar
 
         if($stmt->rowCount() > 0)
         {
-         header('refresh:3;url=../view/public/login.php');
-         print"Seu login já existe no nosso banco de dados!";
-         exit;
+         return"Existente";
         }
         else
         {   
           //print "Seu login ainda não existe";
           $this->cadastrar($email, $senha, $nome);
-          
+      
         }
-        
        }
       finally{}
     }
@@ -44,13 +41,10 @@ class verifica_login extends conectar
             $cadastro = $stmt->execute();
 
             if($cadastro){
-               header('refresh:3;url=../view/public/login.php');
-               print"Usuario cadastrado com sucesso!";
-               exit;
+             return"Cadastrado";
             }
             else{
-               header('refresh:3;url=../view/public/index.php');
-               print"Erro ao cadastrar o seu usuario";
+             return"Erro";
             }
          } 
        finally{}
