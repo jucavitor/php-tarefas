@@ -13,12 +13,7 @@ body {
     background-color: #e3e9f7;
 }
 
-main {
-    padding: 20px;
-    position: fixed;
-    z-index: 1;
-    padding-left: calc(82px + 20px);
-}
+
 
 #sidebar {
     display: flex;
@@ -164,4 +159,101 @@ main {
 #sidebar.open-sidebar .side-item a {
     justify-content: flex-start;
     gap: 14px;
+}
+
+
+main {
+    padding: 30px;
+    width: 100%;
+    margin-left: 100px;
+}
+
+main h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+main form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin-bottom: 40px;
+}
+
+main form input[type="text"],
+main form input[type="date"] {
+    padding: 10px 14px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+main form input[type="submit"] {
+    background-color: #4f46e5;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+main form input[type="submit"]:hover {
+    background-color: #3730a3;
+}
+
+main .painel-tarefas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+main .card-tarefa {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 16px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main .card-tarefa fieldset {
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+main .card-tarefa p {
+    font-size: 14px;
+    color: #444444;
+    margin: 6px 0;
+}
+
+main .acoes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+main .acoes button {
+    background-color: #4f46e5;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }

@@ -94,9 +94,35 @@
         </div>
     </nav>
 
-    <main>
-        <h1>Aqui vai ficar o conteudo da minha pagina.</h1>
-    </main>
+   <main>
+    <h1>Minhas tarefas</h1>
+    <div class="container-pai">
+      
+        <form action="" method="POST">
+            <input type="text" id="tarefa-input" name="titulo" placeholder="Título da tarefa" required>
+            <input type="text" id="descricao-tarefa" name="descricao" placeholder="Descreva sua tarefa" required>
+            <input type="date" id="prazo-entrega" name="prazo" placeholder="Prazo de entrega" required>
+            <input type="submit" name="submit" value="Criar">
+        </form>
+
+        <div class="painel-tarefas">
+            <div class="card-tarefa">
+                <fieldset>Título da tarefa</fieldset>
+                <div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia temporibus, cupiditate voluptate voluptas voluptatem iste consectetur minima.</p>
+                </div>
+                <div>
+                    <p>Prazo: 20/08/2005</p>
+                </div>
+                <div class="acoes">
+                    <button type="submit">Fechar tarefa</button>
+                    <button type="submit">Excluir tarefa</button>
+                    <button type="submit">Editar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
    <script src="../javascript/home.js"></script>
 </body>
 </html>
