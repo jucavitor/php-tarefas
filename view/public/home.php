@@ -1,3 +1,28 @@
+<?php
+
+if(isset($_GET['m']))
+{
+
+    if($_GET['m'] == 'adicionado');
+    {
+        $mensagem = "Sua tarefa foi adicionada com su cesso!";
+    }
+    if($_GET['m'] == 'erro');
+    {
+        $mensagem = "Erro ao inseir sua nova tarefa";
+    }
+
+
+}
+
+
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -98,11 +123,12 @@
     <h1>Minhas tarefas</h1>
     <div class="container-pai">
       
-        <form action="" method="POST">
+        <form action="../../controller/homeController.php" method="POST">
             <input type="text" id="tarefa-input" name="titulo" placeholder="Título da tarefa" required>
             <input type="text" id="descricao-tarefa" name="descricao" placeholder="Descreva sua tarefa" required>
             <input type="date" id="prazo-entrega" name="prazo" placeholder="Prazo de entrega" required>
-            <input type="submit" name="submit" value="Criar">
+            <input type="submit" name="criar-tarefa" value="Criar">
+              <?php print"".$mensagem;?>
         </form>
 
         <div class="painel-tarefas">
