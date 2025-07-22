@@ -1,15 +1,30 @@
+<?php
+
+if(isset($_GET['m']))
+{
+
+    if($_GET['m'] == 'adicionado')
+    {
+        $mensagem = "Sua tarefa foi adicionada com su cesso!";
+    }
+    if($_GET['m'] == 'erro')
+    {
+        $mensagem = "Erro ao inseir sua nova tarefa";
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../CSS/home.css">
-    <title>Inicio</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Adicionar tarefa</title>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../CSS/adicionar.css">
+    </head>
 <body>
-    <nav id="sidebar">
+     <nav id="sidebar">
         <div id="sidebar_content">
             <div id="user">
                 <img src="../imagens/avatar.jpg" id="user_avatar" alt="Avatar">
@@ -25,8 +40,8 @@
             </div>
     
             <ul id="side_items">
-                <li class="side-item active">
-                    <a href="#">
+                <li class="side-item">
+                    <a href="./home.php">
                            <i class="fa-solid fa-clipboard"></i>
                         <span class="item-description">
                             Tarefas
@@ -52,8 +67,8 @@
                     </a>
                 </li>
     
-                <li class="side-item">
-                    <a href="./adicionar.php">
+                <li class="side-item active">
+                    <a href="#">
                         <i class="fa-solid fa-plus"></i>
                         <span class="item-description">
                             Adicionar
@@ -95,32 +110,18 @@
         </div>
     </nav>
 
-<main>
-    <h1>Minhas tarefas</h1>
-    <div class="painel-tarefas">
-        <?php if (!empty($tarefas)): ?>
-            <?php foreach ($tarefas as $tarefa): ?>
-                <div class="card-tarefa">
-                    <fieldset><?= htmlspecialchars($tarefa['titulo']) ?></fieldset>
-                    <div>
-                        <p><?= nl2br(htmlspecialchars($tarefa['descricao'])) ?></p>
-                    </div>
-                    <div>
-                        <p>Prazo: <?= htmlspecialchars($tarefa['prazo']) ?></p>
-                    </div>
-                    <div class="acoes">
-                        <button type="submit">Fechar tarefa</button>
-                        <button type="submit">Excluir tarefa</button>
-                        <button type="submit">Editar</button>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <p>Nenhuma tarefa encontrada.</p>
-        <?php endif; ?>
-    </div>
-</main>
-
-   <script src="../javascript/home.js"></script>
+   <main>
+        <h1>Adicionar tarefa</h1>
+        <div class="container-pai">
+        
+            <form action="../../controller/adicionarController.php" method="POST">
+                <input type="text" id="tarefa-input" name="titulo" placeholder="Título da tarefa" required>
+                <input type="text" id="descricao-tarefa" name="descricao" placeholder="Descreva sua tarefa" required>
+                <input type="date" id="prazo-entrega" name="prazo" placeholder="Prazo de entrega" required>
+                <input type="submit" name="criar-tarefa" value="Criar">
+                <?php print"".$mensagem;?>
+           </form>
+ </main>
+  <script src="../javascript/home.js"></script>
 </body>
 </html>

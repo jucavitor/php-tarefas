@@ -25,8 +25,8 @@ if(isset($_GET['msg']))
   <div class="navbar">
     <h1>Meu Sistema</h1>
     <div class="nav-links">
-      <a href="#">Início</a>
-      <a href="#">Sobre</a>
+    <a href="./index.php">cadastro</a>
+      <a href="./login.php">Login</a>
     </div>
   </div>
   <br><br>
